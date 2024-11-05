@@ -285,7 +285,7 @@
     <label for="hoImage">Hình ảnh hồ cá:</label>
     <input type="file" id="hoImage" name="hoImage" accept="image/*" required><br>
 
-    <button type="button" name="action" value="luuthongtin">Lưu thông tin hồ cá</button>
+    <button type="submit" name="action" value="luuthongtin">Lưu thông tin hồ cá</button>
 </form>
 
 <%
