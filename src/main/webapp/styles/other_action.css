@@ -1,0 +1,52 @@
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px; /* Giới hạn chiều rộng form */
+    margin: 0 auto; /* Căn giữa form */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+form input[type="text"] {
+    width: 100%; /* Đảm bảo input vừa với form */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    width: 100%; /* Đảm bảo nút submit vừa với khung form */
+    padding: 10px 0;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Thông báo lỗi */
+p {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
