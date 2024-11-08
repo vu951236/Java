@@ -1,0 +1,104 @@
+/* Cấu hình cho chi tiết sản phẩm */
+.product-details {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.product-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.product-info {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.product-info div {
+    margin-bottom: 10px;
+}
+
+.product-info strong {
+    color: #007bff;
+}
+
+/* Phần hiển thị hình ảnh sản phẩm */
+#banner-wrapper {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.banner-container {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    height: auto; /* Đảm bảo chiều cao tự động */
+    text-align: center;
+}
+
+.banner-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain; /* Giữ nguyên tỷ lệ và không bị cắt */
+    border-radius: 8px;
+}
+
+
+/* Phần nhập số lượng và nút mua sản phẩm */
+.purchase-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.purchase-section label {
+    font-size: 16px;
+    color: #333;
+}
+
+.purchase-section input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.purchase-section button.buy-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.purchase-section button.buy-button:hover {
+    background-color: #218838;
+}
+
+/* Thông báo lỗi nếu sản phẩm không có hình ảnh */
+.product-details .error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Màu sắc cho các liên kết trong phần chi tiết */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
