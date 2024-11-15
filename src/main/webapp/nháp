@@ -1,0 +1,24 @@
+<form action="SuaHoCa" method="post" enctype="multipart/form-data">
+    <label for="hoName">Tên hồ:</label>
+    <input type="text" id="hoNamemoi" name="hoName" value="<%= request.getParameter("hoName") != null ? request.getParameter("hoName") : "" %>" required><br>
+
+    <label for="hoLength">Chiều dài (cm):</label>
+    <input type="number" id="hoLengthmoi" name="hoLength" value="<%= request.getParameter("hoLength") != null ? request.getParameter("hoLength") : "" %>" required><br>
+
+    <label for="hoWidth">Chiều rộng (cm):</label>
+    <input type="number" id="hoWidthmoi" name="hoWidth" value="<%= request.getParameter("hoWidth") != null ? request.getParameter("hoWidth") : "" %>" required><br>
+
+    <label for="hoHeight">Chiều cao (cm):</label>
+    <input type="number" id="hoHeightmoi" name="hoHeight" value="<%= request.getParameter("hoHeight") != null ? request.getParameter("hoHeight") : "" %>" required><br>
+
+    <label for="fishCount">Số lượng cá:</label>
+    <input type="number" id="fishCountmoi" name="fishCount" value="<%= request.getParameter("fishCount") != null ? request.getParameter("fishCount") : "" %>" required><br>
+
+    <label for="plantCount">Số lượng cây cảnh:</label>
+    <input type="number" id="plantCountmoi" name="plantCount" value="<%= request.getParameter("plantCount") != null ? request.getParameter("plantCount") : "" %>" required><br>
+
+    <label for="hoImage">Hình ảnh hồ cá:</label>
+    <input type="file" id="hoImagemoi" name="hoImage" accept="image/*" required><br>
+
+    <button type="submit" name="action" value="luuthongtin">Lưu thông tin hồ cá</button>
+</form>

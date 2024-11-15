@@ -1,0 +1,760 @@
+body{
+      background-image: url('1.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+}
+
+.img_header-thongtin {
+    margin-left: 80px; /* Thụt vào 80px từ lề trái */
+    width: 85px; /* Kích thước của logo */
+    height: 85px; /* Kích thước của logo */
+}
+.header-content {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.nickname {
+    position: absolute;
+    top: 5px;
+    left: 85px;
+    display: flex;
+    font-size: 22px;
+    color: hsla(0, 0%, 100%, .85);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+.server {
+    position: relative;
+    top: -30px;
+    left: 100px;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .85);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-right: 20px; /* Thêm khoảng cách 20px giữa .server và .uid */
+}
+.emailmacdinh {
+    position: relative;
+    top: -30px; /* Điều chỉnh vị trí từ trên xuống */
+    left: 100px;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .85);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-right: 20px; /* Thêm khoảng cách 20px giữa .server và .uid */
+}
+.idmacdinh{
+    position: relative;
+    left: 85px;
+    display: inline-block; /* Hiển thị phần tử UID như một phần tử inline */
+    top: -30px;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .85);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+.uid {
+    position: relative;
+    left: 85px;
+    display: inline-block; /* Hiển thị phần tử UID như một phần tử inline */
+    top: -30px;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .85);
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+.server, .uid {
+    display: inline-block; /* Đảm bảo .server và .uid hiển thị trên cùng một dòng */
+}
+.avt {
+    position: relative; /* hoặc absolute hoặc fixed tùy vào nhu cầu */
+    top: 90px;
+    left: 220px;
+    display: inline-block; /* Đảm bảo các phần tử trong .avt không đè lên nhau */
+}
+.thongtin {
+    display: flex;
+}
+.avtchar{
+    max-width:120px;
+}
+.DPS{
+    margin-top:20px;
+    margin-left:20px;
+}
+.char1{
+    position: relative;
+    display: inline-block;
+    padding-right:10px;
+}
+.char2{
+    position: relative;
+    display: inline-block;
+    padding-right:10px;
+}
+
+/* Custom scrollbar for .nhanvat */
+.nhanvat {
+    color: hsla(0,0%,100%,.85);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 440px;
+    padding: 5px;
+    border-radius: 16px;
+    height: 420px; /* Độ cao tối đa của div */
+    overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá độ cao */
+}
+
+/* Custom scrollbar styles */
+.nhanvat::-webkit-scrollbar {
+    width: 12px;
+}
+
+.nhanvat::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+.nhanvat::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Custom scrollbar for .main */
+.main {
+    padding-top: 86px; /* Độ cao của header + 30px */
+    position: relative;
+    top: 100px; /* Giữ nguyên top là 30px */
+    color: hsla(0, 0%, 100%, .85);
+    width: 1000px;
+    margin: 0 auto;
+    display: flow-root;
+    padding: 10px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, .48);
+    backdrop-filter: blur(10px);
+    overflow: visible; /* Tự động mở rộng để chứa nội dung */
+}
+
+.tooltip {
+    position: fixed;
+    max-width: 700px;
+    display: flex;
+    bottom: 350px; /* Điều chỉnh khoảng cách từ ghi chú đến hình ảnh */
+    left: 730px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0); /* Trong suốt (đặt alpha thành 0.7) */
+    padding: 10px;
+    pointer-events: none; /* Ngăn sự kiện chuột từ việc tương tác với phần tử */
+    display: none;
+}
+
+.tooltip1 {
+    position: fixed;
+    max-width: 700px;
+    display: flex;
+    bottom: -150px; /* Điều chỉnh khoảng cách từ ghi chú đến hình ảnh */
+    left: 730px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0); /* Trong suốt (đặt alpha thành 0.7) */
+    padding: 10px;
+    pointer-events: none; /* Ngăn sự kiện chuột từ việc tương tác với phần tử */
+    display: none;
+}
+.tooltip.active {
+    display: block; /* Hiển thị phần tử ngay cả khi không được tương tác */
+}
+.tooltip p {
+    position: relative;
+    left: 0px; /* Di chuyển văn bản sang phải 10px */
+    top: -200px; /* Di chuyển văn bản xuống dưới 20px */
+    writing-mode: horizontal-tb;
+    color: hsla(0, 0%, 100%, .85);
+    font-size: 17px;
+}
+#p1 {
+    position: relative;
+    left: 0px; /* Di chuyển văn bản sang phải 10px */
+    top: -160px; /* Di chuyển văn bản xuống dưới 20px */
+    writing-mode: horizontal-tb;
+    color: hsla(0, 0%, 100%, .85);
+    font-size: 17px;
+}
+.toc {
+      background-color: rgba(255, 255, 255, 0);
+      color: hsla(0,0%,100%,.85);
+      position: fixed;
+      top: 280px; /* Điều chỉnh theo cần thiết */
+      right: 110px;
+      padding: 10px;
+      max-height: calc(100vh - 100px); /* Điều chỉnh dựa trên chiều cao của header và footer */
+      overflow-y: auto;
+}
+
+.toc a {
+    color: hsla(0,0%,100%,.85);
+    text-decoration: none;
+}
+.toc a::before {
+    content: '\00B7'; /* Dấu chấm nhỏ */
+    display: inline-block; /* Hiển thị phần tử như là một block nhưng vẫn nằm trong cùng một dòng */
+    width: 1em; /* Đảm bảo rộng đủ để căn giữa */
+    text-align: center; /* Căn giữa dấu chấm */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    margin-right: 5px; /* Khoảng cách giữa dấu chấm và nội dung */
+    font-size: 2em; /* Kích thước của dấu chấm */
+}
+
+.toc a.active::before {
+    content: '\2726'; /* Ký tự ngôi sao */
+    color: hsla(0,0%,100%,.85); /* Màu của ngôi sao */
+    font-size: 2em;
+}
+.tocsp {
+    background-color: rgba(255, 255, 255, 0);
+    color: hsla(0,0%,100%,.85);
+    position: fixed;
+    top: 280px; /* Điều chỉnh theo cần thiết */
+    right: 90px;
+    padding: 10px;
+    max-height: calc(100vh - 100px); /* Điều chỉnh dựa trên chiều cao của header và footer */
+    overflow-y: auto;
+}
+
+.tocsp a {
+    color: hsla(0,0%,100%,.85);
+    text-decoration: none;
+}
+.tocsp a::before {
+    content: '\00B7'; /* Dấu chấm nhỏ */
+    display: inline-block; /* Hiển thị phần tử như là một block nhưng vẫn nằm trong cùng một dòng */
+    width: 1em; /* Đảm bảo rộng đủ để căn giữa */
+    text-align: center; /* Căn giữa dấu chấm */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    margin-right: 5px; /* Khoảng cách giữa dấu chấm và nội dung */
+    font-size: 2em; /* Kích thước của dấu chấm */
+}
+
+.tocsp a.active::before {
+    content: '\2726'; /* Ký tự ngôi sao */
+    color: hsla(0,0%,100%,.85); /* Màu của ngôi sao */
+    font-size: 2em;
+}
+#notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+.chiso {
+    position: relative; /* hoặc absolute hoặc fixed tùy vào nhu cầu */
+    top: 20px;
+    left: -190px;
+}
+.chitiet {
+      background-color: rgba(255, 255, 255, 0);
+      color: hsla(0,0%,100%,.85);
+      position: fixed;
+      top: 80px; /* Điều chỉnh theo cần thiết */
+      right: 50px;
+      padding: 10px;
+      max-height: calc(100vh - 100px); /* Điều chỉnh dựa trên chiều cao của header và footer */
+      overflow-y: auto;
+      display: block;
+}
+.chitiet1 {
+    background-color: rgba(255, 255, 255, 0);
+    color: hsla(0,0%,100%,.85);
+    position: fixed;
+    top: 640px; /* Điều chỉnh theo cần thiết */
+    right: 50px;
+    padding: 10px;
+    max-height: calc(100vh - 100px); /* Điều chỉnh dựa trên chiều cao của header và footer */
+    overflow-y: auto;
+    display: block;
+}
+.chitiet a {
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .45);
+    text-decoration: none;
+}
+.chitiet1 a {
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .45);
+    text-decoration: none;
+}
+.block{
+    width: 12px;
+    height: 12px;
+    margin-left: 2px;
+}
+
+/* Header mặc định */
+header {
+    z-index: 1999;
+    background-color: rgba(0, 0, 0, 0.3); /* Màu nền trong suốt */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px; /* Độ cao của header */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+    color: hsla(0, 0%, 100%, .85); /* Màu chữ */
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: -10px;
+    writing-mode: horizontal-tb;
+    text-decoration: none;
+}
+/* Chỉnh vị trí của chữ "Trang chủ" */
+header h2 a {
+    text-decoration: none; /* Loại bỏ gạch chân khi được chọn */
+    color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+    margin-left: 10px;/* Điều chỉnh khoảng cách từ bên trái */
+    margin-right: auto; /* Đảm bảo chữ "Trang chủ" luôn ở bên trái */
+}
+/* CSS cho liên kết "Trang chủ" */
+.home-link {
+    color: hsla(0, 0%, 100%, .85);
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+}
+
+/* Loại bỏ CSS cho liên kết "Trang chủ" khi được chọn */
+.home-link:hover,
+.home-link:focus,
+.home-link:active {
+    text-decoration: none; /* Loại bỏ gạch chân khi được chọn */
+    color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+}
+
+/* Khi header ở ngoài phần div main */
+header.outside-main {
+    background-color: rgba(0, 0, 0, 0); /* Màu nền trong suốt */
+}
+
+/* Khi header trong phần div main */
+header.inside-main {
+    background-color: rgba(0, 0, 0, 0.8); /* Màu nền đen */
+}
+
+/* Đảm bảo rằng header cố định khi cuộn trang xuống */
+header.fixed {
+    position: fixed;
+    left:  0; /* Đảm bảo header bắt đầu từ góc trái của trang */
+    right: 0; /* Đảm bảo header kết thúc ở góc phải của trang */
+}
+
+/* Hiệu ứng chuyển màu cho header khi cuộn trang */
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền đen */
+}
+
+header.scrolled,
+header.scrolled * {
+    color: hsla(0, 0%, 100%, .85); /* Màu chữ trắng */
+    writing-mode: horizontal-tb;
+}
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: hsla(0, 0%, 100%, .85);
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+/* CSS cho banner và nút điều hướng */
+.banner-container {
+            position: relative;
+            width: 100%;
+            height: 450px; /* Điều chỉnh chiều cao của banner */
+            overflow: hidden;
+}
+.banner-img {
+            width: auto;
+            height: 100%;
+}
+.arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+}
+.left-arrow {
+            left: 10px;
+}
+.right-arrow {
+            right: 10px;
+}
+/* CSS cho phần nội dung phía dưới banner */
+
+.price {
+            font-size: 20px;
+            color: red;
+            margin-top: 10px;
+}
+.original-price {
+            text-decoration: line-through;
+            color: gray;
+            margin-right: 10px;
+}
+.color-options{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            align-items: center;
+            cursor: pointer;
+}
+.size-options {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            align-items: center;
+}
+
+.add-to-cart {
+            margin-top: 50px;
+            margin-bottom: 60px;
+            clear: both; /* Xóa float và margin để ngăn các phần tử khác "ẩn" dưới nó */
+            padding: 10px 20px; /* Điều chỉnh kích thước của nút */
+            font-size: 18px; /* Điều chỉnh kích thước phông chữ */
+            background-color: #9c9797; /* Điều chỉnh màu nền */
+            color: white; /* Điều chỉnh màu chữ */
+            border: none; /* Loại bỏ viền */
+            cursor: pointer; /* Biến con trỏ thành dấu nhấp chuột khi di chuột qua */
+}
+.add-to-cart:hover {
+            background-color: #787373; /* Đổi màu nền khi di chuột qua */
+}
+.color-image {
+            width: 80px; /* Điều chỉnh kích thước hình ảnh */
+            margin-right: 10px;
+            cursor: pointer; /* Biến con trỏ thành dấu chỉ vị */
+}
+.size-input {
+            margin-left: 5px;
+            width: 40px;
+}
+
+.out-of-stock {
+            color: red;
+            display: none; /* Mặc định ẩn thông báo */
+}
+.selected-size::before {
+    content: "\2022"; /* Dấu chấm Unicode */
+    margin-right: 5px; /* Khoảng cách giữa dấu chấm và text */
+    color: #ff0000; /* Màu của dấu chấm */
+}
+/* CSS styling for cart popup */
+.cart-popup {
+    color: #333;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.cart-popup .close-btn:hover {
+    color: #000;
+}
+
+.cart-popup .product-list {
+    margin-bottom: 20px;
+}
+
+.cart-popup .product-list li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-popup .product-list li .remove-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.cart-popup .product-list li .remove-btn:hover {
+    background-color: #cc0000;
+}
+
+.cart-popup .checkout-btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cart-popup .checkout-btn:hover {
+    background-color: #45a049;
+}
+
+/* CSS cho danh sách sản phẩm */
+.products {
+    margin: 20px;
+}
+
+/* CSS cho bảng */
+.products table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bo tròn các góc của bảng */
+    overflow: hidden; /* Đảm bảo các góc bo tròn hiển thị đúng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ nhẹ */
+}
+
+/* CSS cho các ô tiêu đề */
+.products th {
+    padding: 12px;
+    text-align: left;
+    background-color: #4CAF50; /* Màu nền cho tiêu đề */
+    color: white; /* Màu chữ trắng cho tiêu đề */
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+/* CSS cho các ô giá trị */
+.products td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff; /* Màu nền trắng cho các ô */
+    color: #333; /* Màu chữ đậm cho dễ đọc */
+}
+
+/* CSS cho tất cả các hàng */
+.products tr {
+    background-color: #fff; /* Màu nền trắng cho tất cả các hàng */
+}
+
+/* CSS cho các hover */
+.products tbody tr:hover {
+    background-color: #f9f9f9; /* Màu nền nhạt hơn khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Review section styles */
+.review-section {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0); /* Màu nền với độ trong suốt */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff; /* Màu chữ trắng */
+}
+
+/* Review form styles */
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff; /* Màu chữ trắng */
+}
+
+#reviewForm textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0); /* Màu nền với độ trong suốt */
+}
+
+#reviewForm button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#reviewForm button:hover {
+    background-color: #218838;
+}
+
+/* Reviews display styles */
+.reviews {
+    margin-top: 40px;
+}
+
+.reviews h2 {
+    font-size: 22px;
+    color: #fff; /* Màu chữ trắng */
+    margin-bottom: 20px;
+}
+
+.review {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0); /* Màu nền với độ trong suốt */
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.user-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.review-content {
+    margin-left: -70px;
+    flex: 1;
+}
+
+.review-content .username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* Màu chữ trắng */
+}
+
+.review-content .review-text {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff; /* Màu chữ trắng */
+}
+
+.review-content .timestamp {
+    font-size: 14px;
+    color: #fff; /* Màu chữ trắng */
+}
+
+.spacer {
+    height: 80px; /* Hoặc chiều cao bạn muốn */
+}
+.product-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+
+.product-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left; /* Không căn giữa */
+}
+
+.product-info {
+    margin-top: 15px;
+    text-align: left; /* Không căn giữa */
+}
+
+.product-info div {
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #555;
+    text-align: left; /* Không căn giữa */
+}
+
+.product-info strong {
+    color: #000;
+}

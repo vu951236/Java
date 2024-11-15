@@ -1,0 +1,248 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+.carousel-item {
+    display: none;
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+/* Header customization */
+header {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    writing-mode: horizontal-tb;
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, .85); /* Màu chữ */
+}
+.header-content {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Hình ảnh logo header */
+.header-logo {
+    width: 85px; /* Kích thước của logo */
+    height: 85px; /* Kích thước của logo */
+}
+/* Chỉnh vị trí của chữ "Trang chủ" */
+header h2 a {
+    text-decoration: none; /* Loại bỏ gạch chân khi được chọn */
+    color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+    margin-left: 10px;/* Điều chỉnh khoảng cách từ bên trái */
+    margin-right: auto; /* Đảm bảo chữ "Trang chủ" luôn ở bên trái */
+}
+/* CSS cho liên kết "Trang chủ" */
+.home-link {
+    color: hsla(0, 0%, 100%, .85);
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+}
+/* Loại bỏ CSS cho liên kết "Trang chủ" khi được chọn */
+.home-link:hover,
+.home-link:focus,
+.home-link:active {
+    text-decoration: none; /* Loại bỏ gạch chân khi được chọn */
+    color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+}
+
+/* Khi header ở ngoài phần div main */
+header.outside-main {
+    background-color: rgba(0, 0, 0, 0); /* Màu nền trong suốt */
+}
+
+/* Khi header trong phần div main */
+header.inside-main {
+    background-color: rgba(0, 0, 0, 0.8); /* Màu nền đen */
+}
+
+/* Đảm bảo rằng header cố định khi cuộn trang xuống */
+header.fixed {
+    position: fixed;
+    left:  0; /* Đảm bảo header bắt đầu từ góc trái của trang */
+    right: 0; /* Đảm bảo header kết thúc ở góc phải của trang */
+}
+
+/* Hiệu ứng chuyển màu cho header khi cuộn trang */
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền đen */
+}
+
+header.scrolled,
+header.scrolled * {
+    color: hsla(0, 0%, 100%, .85); /* Màu chữ trắng */
+    writing-mode: horizontal-tb;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#prevBtn {
+    left: 20px;
+}
+
+#nextBtn {
+    right: 20px;
+}
+
+.carousel img {
+    object-fit: cover;
+    height: 100vh;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: red;
+    padding: 12px 24px;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 200px; /* Vị trí dưới cùng */
+    left: 13%; /* Căn giữa */
+    transform: translateX(-50%); /* Căn giữa */
+    z-index: 10; /* Đặt lên trên hình ảnh */
+}
+
+.cta-button:hover {
+    background-color: #2563EB;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 500px;
+    }
+    header .container {
+        padding: 0 10px;
+    }
+    .carousel-btn {
+        padding: 10px;
+    }
+}
+
+footer {
+    background-color: #f9fafb; /* Màu nền cho footer */
+    padding: 20px;
+    display: flex; /* Sử dụng flexbox để bố trí nội dung */
+    justify-content: space-between; /* Căn giữa hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    border-top: 1px solid #e5e7eb; /* Đường viền trên footer */
+}
+
+.footer-content {
+    display: flex; /* Sử dụng flexbox cho nội dung chính */
+    flex: 1; /* Chiếm toàn bộ chiều rộng */
+    justify-content: space-between; /* Căn giữa các mục trong footer */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.footer-logo-section {
+    display: flex; /* Sử dụng flexbox để căn giữa logo và hotline */
+    flex-direction: column; /* Xếp theo hàng dọc */
+    align-items: center; /* Căn giữa các mục */
+}
+
+.footer-logo {
+    width: 85px; /* Kích thước logo */
+    height: 85px; /* Kích thước logo */
+    margin-bottom: 5px; /* Khoảng cách dưới logo */
+}
+
+.hotline {
+    margin: 0; /* Bỏ khoảng cách mặc định */
+    color: #4A5568; /* Màu cho hotline */
+}
+
+.footer-links {
+    list-style: none; /* Bỏ dấu đầu dòng */
+    padding: 0; /* Bỏ khoảng cách mặc định */
+    margin: 0; /* Bỏ khoảng cách mặc định */
+    display: flex; /* Hiển thị danh sách liên kết ngang */
+    flex-direction: column; /* Xếp theo hàng dọc */
+    align-items: center; /* Căn giữa các liên kết */
+    flex: 1; /* Chiếm toàn bộ chiều rộng còn lại */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Khoảng cách giữa các liên kết */
+}
+
+.footer-links a {
+    text-decoration: none; /* Bỏ gạch chân cho liên kết */
+    color: #1D4ED8; /* Màu liên kết */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.footer-links a:hover {
+    color: #2563EB; /* Màu liên kết khi hover */
+}
+
+.footer-bottom {
+    color: #6B7280; /* Màu chữ cho văn bản quyền */
+    margin-left: auto; /* Đẩy văn bản quyền sang bên phải */
+    margin-top: auto; /* Căn giữa theo chiều dọc */
+    margin-bottom: auto; /* Căn giữa theo chiều dọc */
+}
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: hsla(0, 0%, 100%, .85);
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}

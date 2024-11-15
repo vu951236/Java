@@ -1,0 +1,211 @@
+/* Đặt font và màu nền mặc định */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng tiêu đề */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+/* Container chính để chứa nội dung */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Định dạng các phần thông tin về hồ cá */
+.ho-info {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ho-info img {
+    max-width: 200px;
+    max-height: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.ho-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ho-details h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.ho-details p {
+    margin: 5px 0;
+    color: white;
+}
+
+/* Định dạng cho các nút bấm */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng form nhập liệu */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #333;
+}
+
+form label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+    margin-left: 0px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"] {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+form input:focus {
+    border-color: #5b9bd5;
+    outline: none;
+}
+
+form button[type="submit"],
+form button[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng responsive cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .ho-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ho-info img {
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Thông báo */
+#waterQualityNotification,
+#foodNotification,
+#saltNotification {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0f7e0;
+    border: 1px solid #90ee90;
+    color: #2f8f2f;
+    border-radius: 5px;
+    display : none;
+}
+
+/* Tổng thể */
+h3 {
+    color: white;
+    font-size: 24px;
+    border-bottom: 2px solid #5b9bd5;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+form, label, input, button {
+    max-width: 500px;
+    margin: auto;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #5b9bd5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4a8bc0;
+}
